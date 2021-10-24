@@ -14,43 +14,21 @@ public class AddTwoNumbers {
         ListNode dummyNode = new ListNode(0);
         ListNode cur = dummyNode;
         int needAdd = 0;
-        while(cur1 != null && cur2 != null) {
+        while(cur1 != null || cur2 != null || needAdd != 0) {
+            if (cur1 == null) {
+                cur1 = new ListNode(0);
+            }
+            if (cur2 == null) {
+                cur2 = new ListNode(0);
+            }
             int sum = cur1.value + cur2.value+needAdd;
             int unit = sum%10;
-            ListNode next = new ListNode(unit);
+            cur.next = new ListNode(unit);
             needAdd = sum/10;
-            cur.next = next;
             cur = cur.next;
             cur1 = cur1.next;
             cur2 = cur2.next;
         }
-        if (needAdd != 0) {
-             if (cur1 == null && cur2 == null) {
-                cur.next = new ListNode(1);
-                }else{
-                    while (cur1 != null) {
-                        int sum = cur1.value + needAdd;
-                        int unit = sum%10;
-                        cur.next = new ListNode(unit);
-                        needAdd = sum/10;
-                        cur1 = cur1.next;
-                        cur = cur.next;
-                    }
-                    while (cur2 != null) {
-                        int sum = cur2.value + needAdd;
-                        int unit = sum%10;
-                        cur.next = new ListNode(unit);
-                        needAdd = sum/10;
-                        cur2 = cur2.next;
-                        cur = cur.next;
-                    }
-                    
-                    
-                }
-            }
-            if (needAdd != 0) {
-                cur.next = new ListNode(1);
-            }
         return dummyNode.next;
     }
     public static List<Integer> toArray(ListNode head) {
@@ -68,7 +46,7 @@ public class AddTwoNumbers {
         ListNode n4 = new ListNode(9);
         ListNode num2 = new ListNode(2);
         ListNode m2 = new ListNode(1);
-        ListNode m3 = new ListNode(8);
+        ListNode m3 = new ListNode(7);
         num1.next = n2;
         n2.next = n3;
         n3.next = n4;
