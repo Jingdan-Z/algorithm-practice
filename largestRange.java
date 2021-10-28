@@ -1,3 +1,4 @@
+//get the largest range of the consecutive numbers
 import java.util.*;
 public class largestRange {
     public static int[] solution(int[]input) {
