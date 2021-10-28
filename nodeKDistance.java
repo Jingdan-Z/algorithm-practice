@@ -1,3 +1,4 @@
+/*question: find the nodes that are k distance away from target node with value k */
 import java.util.*;
 public class nodeKDistance {
     static class TreeNode {//create treenode class
@@ -55,7 +56,9 @@ public class nodeKDistance {
             }
             return result;
     }
-    private static TreeNode findtarget(TreeNode root, int target) {//gurantee in the tree
+    private static TreeNode findtarget(TreeNode root, int target) {//gurantee in the tree 
+        //no need this function 
+        //can be found using the hashmap
         if (root == null) {
             return null;
         }
