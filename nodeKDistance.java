@@ -29,7 +29,7 @@ public class nodeKDistance {
         visited.add(targetNode);
        
         //i represents the distance from the target node
-            while(!nodesInRange.isEmpty() && (nodesInRange.peekFirst().level < 2)) {
+            while(!nodesInRange.isEmpty() && (nodesInRange.peekFirst().level < k)) {
                 TreeNode cur = nodesInRange.peekFirst().node;
                 int level = nodesInRange.pollFirst().level;
                 TreeNode parent = fullPath.get(cur.value);
